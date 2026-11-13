@@ -36,3 +36,35 @@
 .game-footer .review{margin:0 0 0 auto}
 @media(max-width:980px){.game-top{grid-template-columns:1fr auto;padding:20px 24px 30px}.game-top .progress{grid-column:1/-1;justify-content:center}.game-panel .play-area{grid-template-columns:1fr}.game-panel .prompt{width:min(420px,100%);margin:auto}.game-panel .prompt img{min-height:270px}.game-panel .choice{min-height:140px}}
 @media(max-width:600px){.game-panel{padding:12px 11px 18px;border-radius:22px}.game-top{gap:9px;padding:14px 13px 25px;border-radius:19px}.game-top h1{font-size:1.4rem;padding:10px 12px;border-radius:17px}.game-top .seat-badge{font-size:.85rem;padding:8px 10px}.game-top .star{width:38px;height:38px;font-size:2rem}.game-meta{margin-top:20px;font-size:.8rem}.game-panel .prompt{width:min(300px,100%);padding:12px}.game-panel .prompt img{min-height:220px}.game-panel .choices{gap:7px}.game-panel .choice{min-height:88px;padding:5px;border-radius:15px}.game-panel .choice img{max-height:116px;border-radius:9px}.game-footer{flex-direction:column-reverse;align-items:stretch}.game-footer .review{margin:0;width:100%}.game-footer .back{align-self:flex-start}}
+
+/* A fixed 16:9 stage scales as one unit for large displays and landscape tablets. */
+.app-shell{position:relative;width:100vw;height:100dvh;min-height:0;padding:0;overflow:hidden}
+.stage-frame{position:absolute;top:50%;left:50%;width:1440px;height:810px;transform:translate(-50%,-50%) scale(var(--stage-scale,1));transform-origin:center center;isolation:isolate}
+.stage-frame>.panel{width:100%;max-width:none;height:100%;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.stage-frame>.game-panel{overflow:hidden}
+.fullscreen-toggle{position:absolute;z-index:50;top:18px;right:18px;width:52px;height:52px;display:grid;place-items:center;border:2px solid #d7e4d5;border-radius:15px;background:#fffdf7;color:var(--dark);box-shadow:0 5px 14px #34463f24;cursor:pointer}
+.fullscreen-toggle:hover,.fullscreen-toggle:focus-visible{background:#eaf3e9;outline:3px solid #6f927e77;outline-offset:2px}
+.fullscreen-toggle svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fullscreen-toggle.is-fullscreen svg{transform:rotate(180deg)}
+.home-panel{display:flex;flex-direction:column}
+.home-panel .brand{margin-bottom:20px}
+.home-panel .identity{margin-bottom:20px}
+.home-panel .seat-area{width:850px;padding:16px}
+.home-panel .seat-grid{gap:6px}
+.home-panel .seat{aspect-ratio:auto;height:58px}
+.home-panel .actions{margin-top:18px}
+.copyright{margin-top:auto;padding-top:18px;text-align:center;color:var(--muted);font-size:17px;font-weight:800}
+.game-panel .game-top{min-height:130px;padding-right:86px}
+.game-panel .game-meta{margin-top:18px}
+.game-panel .instruction{margin:8px 0 16px}
+.game-panel .play-area{height:390px;grid-template-columns:minmax(280px,1.02fr) minmax(480px,1.75fr)}
+.game-panel .prompt img{min-height:0;height:100%;aspect-ratio:auto}
+.game-panel .choices{grid-template-rows:repeat(2,minmax(0,1fr))}
+.game-panel .choice{height:185px;min-height:0}
+.game-panel .choice img{height:100%;max-height:none;aspect-ratio:auto}
+.game-panel .game-footer{margin-top:15px;min-height:52px}
+.stage-frame .report-head{padding-right:72px}
+.stage-frame .report-head h1{font-size:2.5rem}
+.game-panel .prompt,.game-panel .choices{min-height:0;height:100%;overflow:hidden}
+.game-panel .prompt{grid-template-rows:minmax(0,1fr)}
+.game-panel .prompt img{min-height:0;max-height:100%}
